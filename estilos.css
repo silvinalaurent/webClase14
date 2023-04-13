@@ -1,0 +1,12 @@
+#cuadro
+{
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    background-color: coral;
+}
+
+.celeste
+{
+    background-color: aqua!important;
+} 

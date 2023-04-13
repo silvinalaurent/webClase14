@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Jquery</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script>
+        
+        function  agrandar(){
+            $("#cuadro").width(200);
+            $("#cuadro").height(200);
+        }
+       
+        
+        function cambiar_clase(){
+            $("#cuadro").addClass("celeste");
+        }
+
+        function agregar_elemento(){
+            var elemento=$("#elemento").val();
+            
+            $("#detalle").append(elemento);
+        }
+
+        function posicion(){
+            var div = $("#cuadro");
+
+            var position = div.position();
+            console.log(position);
+            $("p").last().text( "left: " + position.left + ", top: " + position.top );
+        }
+       
+            function agregarPropiedadBorder() {
+            let x = $("#tabla1");
+            x.attr("border", "1");
+            }
+
+            function recuperarPropiedadBorder() {
+            let x = $("#tabla1");
+            if (x.attr("border") != undefined)
+                alert(x.attr("border"));
+            else
+                alert("No está definida la propiedad border en la tabla");
+            }
+
+            function eliminarPropiedadBorder() {
+            let x = $("#tabla1");
+            x.removeAttr("border");
+            }
+
+
+    </script>
+</head>
+<body>
+    <h1>Pruebas con Jquery</h1>
+    <p>Algunos ejemplos de cambios que podemos introducir desde el codigo</p>
+    <div id="cuadro">
+
+    </div>
+    <button onclick="agrandar()">Cambiar dimensiones</button>
+    <button onclick="cambiar_clase()">Cambiar clase</button>
+    <p id="detalle">Este es un parrafo...</p>
+    <input type="text" id="elemento">
+    <button onclick="agregar_elemento()">Agregar elementos</button>
+    
+    <br>    
+    
+    <button onclick="posicion()">Posicion del Div</button>
+    <p id="p1">Posicion</p>
+
+
+    <input type="button" id="boton1" value="Añadir propiedad border" onclick="agregarPropiedadBorder()"><br>
+    <input type="button" id="boton2" value="Recuperar valor de la propiedad border" onclick="recuperarPropiedadBorder()"><br>
+    <input type="button" id="boton3" value="Eliminar la propiedad border" onclick="eliminarPropiedadBorder()">
+    
+    <table id="tabla1">
+
+      <tr>
+        <td>1111111111</td>
+        <td>1111111111</td>
+        <td>1111111111</td>
+        <td>1111111111</td>
+      </tr>
+      <tr>
+        <td>2222222222</td>
+        <td>2222222222</td>
+        <td>2222222222</td>
+        <td>2222222222</td>
+      </tr>
+      <tr>
+        <td>3333333333</td>
+        <td>3333333333</td>
+        <td>3333333333</td>
+        <td>3333333333</td>
+      </tr>
+    </table>
+    
+</body>
+</html>
